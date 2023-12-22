@@ -2,6 +2,8 @@ console.log("JS OK")
 
 // recupero gli elementi dall'html
 numbersofElements = document.getElementById('number-elements');
+numbersofElementsShown = document.getElementById('number-elements-shown');
+
 button = document.getElementById("button");
 
 //metto il pulsante in ascolto
@@ -10,6 +12,9 @@ button.addEventListener('click', function (){
     //salvo nelle variabili i dati forniti dall'utente
     const elementsNumber = numbersofElements.value
     console.log(elementsNumber);
+
+    const elementsShown = numbersofElementsShown.value
+    console.log(elementsShown);
     
     //se ho meno di 5 elementi non avvio il software
     if(elementsNumber < 5){
@@ -31,8 +36,8 @@ button.addEventListener('click', function (){
         //inverto gli elementi dell'array per facilitarmi nel for
         numbers.reverse();
         
-        //salvo i 5 elementi che mi interessano in un altro array da mostrare in console
-        for(i = 0 ; i <= 4 ; i++){
+        //salvo il tot dielementi che mi interessano in un altro array da mostrare in console
+        for(i = 0 ; i <= elementsShown - 1; i++){
             shownNumbers[i] = numbers[i];
         }
 
